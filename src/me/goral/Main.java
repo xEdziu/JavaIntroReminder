@@ -29,23 +29,17 @@ public class Main {
             for (int i = 0; i < questions.size(); i++){
                 points = askQuestion(questions, answers, points, i, scanner);
             }
-            outputResults(points);
+            outputResults(points, questions.size());
 
             System.out.println("Want to play again?");
             if (!scanner.next().equals("yes")) flag = false;
         }
     }
 
-    private static void outputResults(int points) {
-        switch (points) {
-            case 5 -> System.out.println("You're math master! 5 points to Gryffindor!");
-            case 4 -> System.out.println("Almost there! 4 points!");
-            case 3 -> System.out.println("Congrats! You earned 3 points!");
-            case 2 -> System.out.println("Whoops! Only 2 points!");
-            case 1 -> System.out.println("Hmm. 1 point. You can do better than that.");
-            case 0 -> System.out.println("I won't comment that");
-            default -> System.out.println("Default switch pass");
-        }
+    private static void outputResults(int points, int size) {
+        float percentage = (float)points / (float)size;
+        System.out.println("You answered correctly for " +points+ " questions out of "+size);
+        System.out.println("That gives you: "+percentage*100+"%");
     }
 
     private static int askQuestion(List<String> q, List<Integer> a, int points, int i, Scanner sc) {

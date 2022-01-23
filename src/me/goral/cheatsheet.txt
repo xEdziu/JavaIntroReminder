@@ -1,0 +1,11 @@
+ARRAY LISTS
+a.k.a "dynamical arrays"
+List<String> questions = new ArrayList<>();
+List<Integer> answers = new ArrayList<>();
+
+MAPS
+Key-Value Pair
+Map<String, String> countryToCode = new HashMap<>();
+
+INPUT
+Scanner scanner = new Scanner(System.in);
