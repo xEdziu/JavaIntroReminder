@@ -1,30 +1,32 @@
 package me.goral;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        String[] questions = new String[5];
-        questions[0] = "How much is 2 + 2?";
-        questions[1] = "How much is 10 * 23?";
-        questions[2] = "How much is 3 - 5?";
-        questions[3] = "How much is 10 / 2?";
-        questions[4] = "How much is 54 * 2?";
+        List<String> questions = new ArrayList<>();
+        questions.add("How much is 2 + 2?");
+        questions.add("How much is 10 * 23?");
+        questions.add("How much is 3 - 5?");
+        questions.add("How much is 10 / 2?");
+        questions.add("How much is 54 * 2?");
 
-        int[] answers = new int[5];
-        answers[0] = 2+2;
-        answers[1] = 10 * 23;
-        answers[2] = 3 - 5;
-        answers[3] = 10 / 2;
-        answers[4] = 54 * 2;
+        List<Integer> answers = new ArrayList<>();
+        answers.add(2+2);
+        answers.add(10 * 23);
+        answers.add(3 - 5);
+        answers.add(10 / 2);
+        answers.add(54 * 2);
 
         int points = 0;
         boolean flag = true;
 
         while(flag) {
-            for (int i = 0; i < questions.length; i++){
+            for (int i = 0; i < questions.size(); i++){
                 points = askQuestion(questions, answers, points, i, scanner);
             }
             outputResults(points);
@@ -46,9 +48,9 @@ public class Main {
         }
     }
 
-    private static int askQuestion(String[] q, int[] a, int points, int i, Scanner sc) {
-        System.out.println(q[i]);
-        if (sc.nextInt() == a[i]) points++;
+    private static int askQuestion(List<String> q, List<Integer> a, int points, int i, Scanner sc) {
+        System.out.println(q.get(i));
+        if (sc.nextInt() == a.get(i)) points++;
         return points;
     }
 }
