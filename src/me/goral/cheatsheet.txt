@@ -9,3 +9,8 @@ Map<String, String> countryToCode = new HashMap<>();
 
 INPUT
 Scanner scanner = new Scanner(System.in);
+
+SETS
+Set is a collection that contains no duplicates
+Set<String> usernames = new HashSet<>();
+usernames.add("Adi");
