@@ -3,6 +3,7 @@ package me.goral;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Main {
     public static void main(String[] args){
@@ -40,6 +41,25 @@ public class Main {
         float percentage = (float)points / (float)size;
         System.out.println("You answered correctly for " +points+ " questions out of "+size);
         System.out.println("That gives you: "+percentage*100+"%");
+        int grade = 0;
+
+
+        if (percentage >= 0.95) grade = 6;
+        else if (percentage < 0.95 && percentage >= 0.86) grade = 5;
+        else if (percentage < 0.86 && percentage >= 0.76) grade = 4;
+        else if (percentage < 0.76 && percentage >= 0.65) grade = 3;
+        else if (percentage < 0.65 && percentage >= 0.50) grade = 2;
+        else grade = 1;
+
+        switch (grade) {
+            case 1 -> System.out.println("You did not pass. Grade: 1");
+            case 2 -> System.out.println("You passed the test. Grade: 2");
+            case 3 -> System.out.println("You did quite good. Grade: 3");
+            case 4 -> System.out.println("Good job. Grade: 4");
+            case 5 -> System.out.println("I am proud of you. Grade: 5");
+            case 6 -> System.out.println("Nerd. Grade: 6");
+            default -> System.out.println("default");
+        }
     }
 
     private static int askQuestion(List<String> q, List<Integer> a, int points, int i, Scanner sc) {
