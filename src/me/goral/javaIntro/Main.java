@@ -1,4 +1,6 @@
-package me.goral;
+package me.goral.javaIntro;
+
+import me.goral.javaIntro.Quiz;
 
 import java.util.*;
 

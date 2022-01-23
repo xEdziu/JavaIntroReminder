@@ -1,4 +1,4 @@
-package me.goral;
+package me.goral.javaIntro;
 
 import java.util.Map;
 import java.util.Scanner;
