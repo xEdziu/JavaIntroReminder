@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Quiz {
 
-    private Map<String, Integer> quizBase;
+    private final Map<String, Integer> quizBase;
     private int points = 0;
-    private int size;
-    private Scanner scanner = new Scanner(System.in);
+    private final int size;
+    private final Scanner scanner = new Scanner(System.in);
 
     public Quiz(Map<String, Integer> quizBase, int size) {
         this.quizBase = quizBase;
@@ -50,12 +50,11 @@ public class Quiz {
         }
     }
 
-    private int askQuestion() {
+    private void askQuestion() {
         for (String key : quizBase.keySet()) {
             System.out.println(key);
             if (scanner.nextInt() == quizBase.get(key)) points++;
         }
-        return points;
     }
 
     public boolean playAgain(){
